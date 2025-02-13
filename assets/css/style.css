@@ -118,32 +118,9 @@ h4,
 h5,
 h6,
 p,
-blockquote,
 pre,
 a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
 img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
 u,
 i,
 center,
@@ -153,38 +130,8 @@ dd,
 ol,
 ul,
 li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
 footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+header {
     margin: 0;
     padding: 0;
     border: 0;
@@ -194,17 +141,10 @@ video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
 footer,
 header,
-hgroup,
 menu,
-nav,
-section {
+nav {
     display: block;
 }
 
@@ -217,22 +157,10 @@ ul {
     list-style: none;
 }
 
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -254,7 +182,6 @@ body {
 .header-top-inner {
     align-items: center;
     justify-content: space-between;
-    z-index: 2;
     padding-bottom: 5px;
 }
 
@@ -604,9 +531,10 @@ body {
 }
 
 .input-search {
-    border-radius: 10px;
+    border-radius: 20px;
     height: 30px;
     width: 100%;
+    border: none;
 }
 
 .icon-search-moblie svg {
@@ -843,6 +771,10 @@ body {
 }
 
 /*Products*/
+.product-content {
+    padding: 10px;
+}
+
 .product-title {
     text-align: center;
 }
@@ -863,7 +795,7 @@ body {
     gap: 15px;
     align-items: center;
     justify-content: center;
-    padding-bottom: 30px;
+    padding: 15px 15px 30px 15px;
 }
 
 .list-product-title li {
@@ -897,6 +829,7 @@ body {
 
 .list-product {
     box-sizing: border-box;
+    margin: 0 -5px;
 }
 
 .product-item {
@@ -921,7 +854,7 @@ body {
 }
 
 .product-content {
-    padding: 10px;
+    padding: 30px 10px;
 }
 
 .product-name {
@@ -938,14 +871,14 @@ body {
     align-items: center;
 }
 
-.product-id,
+.product-code,
 .product-price {
     flex: 0 0 50%;
     max-width: 50%;
     text-align: center;
 }
 
-.product-id span {
+.product-code span {
     color: rgb(0, 104, 214);
 }
 
@@ -960,10 +893,11 @@ body {
 .paginate {
     text-align: center;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding-bottom: 60px;
 }
 
 .product-paginate li {
@@ -1013,16 +947,13 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 2;
 }
 
 .introduce-inner {
     background-color: #ffffff;
     position: relative;
-    z-index: 4;
+    z-index: 3;
 }
 
 .introduce-left-inner {
@@ -1122,7 +1053,7 @@ body {
 
 /*typical-projects*/
 .typical-projects {
-    padding-top: 30px;
+    padding-top: 60px;
     padding-bottom: 30px;
 }
 
@@ -1154,12 +1085,12 @@ body {
     font-family: 'Roboto Condensed';
     font-size: 30px;
     color: rgb(0, 121, 214);
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .typical-project-title p {
     font-size: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 }
 
 .typical-project-list {
@@ -1177,6 +1108,7 @@ body {
     height: auto;
     transition: 0.3s ease-out;
     transform: scale(1, 1);
+    display: block;
 }
 
 .typical-project-list-left {
@@ -1261,6 +1193,7 @@ body {
 .feedback-left {
     display: flex;
     flex-direction: column;
+
 }
 
 .feedback-left-icon {
@@ -1299,6 +1232,17 @@ body {
 
 .feedback-overlay {
     z-index: 1;
+    position: relative;
+}
+
+.feedback-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/feedback-overlay_02.png');
 }
 
 .feedback-left-item {
@@ -1307,7 +1251,6 @@ body {
     bottom: -415px;
     left: 0;
     z-index: 3;
-    padding-left: 10px;
     padding-right: 40px;
 }
 
@@ -1356,6 +1299,7 @@ body {
     width: 100%;
     height: auto;
     object-fit: cover;
+    position: relative;
 }
 
 .feedback-left-item-right::before {
@@ -1389,9 +1333,6 @@ body {
 }
 
 .feedback-left-item-info-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     color: white;
 }
 
@@ -1409,7 +1350,7 @@ body {
 .btn-control-feedback {
     position: absolute;
     bottom: 8%;
-    left: 3%;
+    left: 2%;
     z-index: 3;
     color: white;
 }
@@ -1539,6 +1480,7 @@ body {
     width: 100%;
     height: auto;
     object-fit: cover;
+    display: block;
 }
 
 .news-active-title {
@@ -1549,9 +1491,12 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
     color: white;
     background-color: rgb(0, 121, 214);
     margin-right: 10px;
+    flex-direction: column;
+    padding: 5px;
 }
 
 .news-active-title-left p {
@@ -1564,21 +1509,21 @@ body {
 
 .news-active-title-right {
     text-align: justify;
+    padding-top: 10px;
 }
 
 .news-active-title-right p {
     line-height: 25px;
+    font-weight: bold;
 }
 
 .news-active-content {
-    flex: 0 0 100%;
-    max-width: 100%;
     text-align: justify;
     padding: 20px 0;
 }
 
 .news-active-content p {
-    line-height: 18px;
+    line-height: 25px;
     color: rgb(114, 114, 114);
 }
 
@@ -1588,7 +1533,7 @@ body {
     color: white;
     border: none;
     position: relative;
-    display: inline-block;
+    bottom: 5px;
 }
 
 .btn-more-news::before {
@@ -1619,6 +1564,7 @@ body {
 
 .news-list-item-left img {
     width: 100%;
+    height: 100%;
 }
 
 .news-list-item-right {
@@ -1654,21 +1600,18 @@ body {
 }
 
 .swiper-container-news {
-    max-height: 510px;
     overflow: hidden;
 }
 
 /*company-card */
 
 .company-card {
-    display: flex;
     padding: 30px 0;
     overflow: hidden;
 }
 
-.company {
-    display: flex;
-    justify-content: center;
+.company .slick-slide {
+    margin: 0 10px;
 }
 
 .slick-prev {
@@ -1676,16 +1619,13 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 50%;
-    left: -50px;
-    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
     z-index: 10;
     border: none;
     outline: none;
     cursor: pointer;
+    left: -20px;
 }
 
 
@@ -1698,12 +1638,8 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 50%;
-    right: -50px;
-    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
     z-index: 10;
     border: none;
     outline: none;
@@ -1784,6 +1720,10 @@ body {
     display: flex;
     align-items: center;
     margin: 20px 0;
+}
+
+.footer-info .footer-social {
+    flex-wrap: wrap;
 }
 
 .footer-info a {
@@ -1927,14 +1867,11 @@ body {
     right: 20px;
     display: none;
     z-index: 99;
-    border: none;
-    outline: none;
     background-color: rgb(0, 121, 214);
     color: white;
     cursor: pointer;
-    padding: 15px 20px 10px 20px;
+    padding: 5px;
     border-radius: 50%;
-    font-size: 18px;
     transition: opacity 0.3s;
     animation: pulse 1s infinite;
 }
@@ -1969,7 +1906,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     body {
-        font-size: 12px;
+        font-size: 13px;
         box-sizing: border-box;
     }
 
@@ -2207,6 +2144,10 @@ RESPOONSIVE Screen Size 991px
     }
 
     /*Products*/
+    .product-content {
+        padding: 20px 10px;
+    }
+
     .product-title h2 {
         font-size: 30px;
         padding-bottom: 10px;
@@ -2245,7 +2186,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .introduce {
-        padding: 30px 30px;
+        padding: 30px 15px;
     }
 
     /*typical-projects*/
@@ -2276,10 +2217,6 @@ RESPOONSIVE Screen Size 991px
         padding-top: 10px;
     }
 
-    .overlay-project-left {
-        bottom: 3px;
-    }
-
     /*Feedback*/
     .feedback-inner {
         padding: 30px 0;
@@ -2307,9 +2244,8 @@ RESPOONSIVE Screen Size 991px
         line-height: 50px;
     }
 
-    .feedback-left-item-left {
-        flex: 0 0 65%;
-        max-width: 65%;
+    .feedback-overlay::before {
+        height: calc(100% - 2px);
     }
 
     .feedback-left-item-right {
@@ -2342,21 +2278,20 @@ RESPOONSIVE Screen Size 991px
     }
 
     .news-active {
-        padding-right: 15px;
-        padding-bottom: 15px;
+        padding-right: 5px;
     }
 
     .news-list {
-        padding: 0 15px;
+        padding-left: 5px;
     }
 
     .news-list-item {
         padding: 0;
     }
 
-    .swiper-container-news {
+    /* .swiper-container-news {
         max-height: 950px;
-    }
+    } */
 
     .company-card {
         padding: 20px 0;
@@ -2390,12 +2325,6 @@ RESPOONSIVE Screen Size 991px
         flex-direction: row;
     }
 
-    .time-open,
-    .support-policy {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-
     .copyright-inner {
         justify-content: center;
     }
@@ -2413,7 +2342,7 @@ RESPOONSIVE Screen Size 991px
 @media screen and (max-width: 768px) {
 
     body {
-        font-size: 11px;
+        font-size: 13px;
         box-sizing: border-box;
     }
 
@@ -2660,6 +2589,10 @@ RESPOONSIVE Screen Size 991px
     }
 
     /*Products*/
+    .product-content {
+        padding: 10px;
+    }
+
     .product-title h2 {
         font-size: 26px;
         padding-bottom: 10px;
@@ -2705,7 +2638,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .introduce {
-        padding: 30px 30px;
+        padding: 30px 15px;
     }
 
     .introduce-title h2 {
@@ -2792,6 +2725,10 @@ RESPOONSIVE Screen Size 991px
         left: 20px;
     }
 
+    .feedback-overlay::before {
+        height: calc(100% - 2px);
+    }
+
     .btn-control-feedback {
         bottom: 15%;
     }
@@ -2815,7 +2752,11 @@ RESPOONSIVE Screen Size 991px
     }
 
     .news-active {
-        padding-right: 15px;
+        padding-right: 5px;
+    }
+
+    .news-list {
+        padding-left: 5px;
     }
 
     .news-active-title-left span {
@@ -2828,7 +2769,6 @@ RESPOONSIVE Screen Size 991px
 
     .news-active-title-right p {
         line-height: 18px;
-        font-size: 13px;
     }
 
     .news-active-content {
@@ -2844,9 +2784,10 @@ RESPOONSIVE Screen Size 991px
         font-size: 26px;
     }
 
+    /* 
     .swiper-container-news {
         max-height: 720px;
-    }
+    } */
 
     .company-card {
         padding: 20px 0;
@@ -2880,7 +2821,7 @@ RESPOONSIVE Screen Size 991px
 @media screen and (max-width: 568px) {
 
     body {
-        font-size: 10px;
+        font-size: 13px;
         box-sizing: border-box;
     }
 
@@ -3063,16 +3004,23 @@ RESPOONSIVE Screen Size 991px
     }
 
     .slide-caption p {
-        font-size: 8px;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
+        margin-top: 0;
+        line-height: 1;
+        font-size: 10px;
     }
 
     .slide-caption button {
-        padding: 5px 10px;
+        padding: 5px;
+    }
+
+    .hotline {
+        margin-left: 10px;
     }
 
     .hotline>p {
         font-size: 8px;
+        padding: 5px;
     }
 
     .hotline p a {
@@ -3118,6 +3066,10 @@ RESPOONSIVE Screen Size 991px
     }
 
     /*Products*/
+    .product-content {
+        padding: 10px;
+    }
+
     .product-title h2 {
         font-size: 24px;
         padding-bottom: 10px;
@@ -3136,16 +3088,13 @@ RESPOONSIVE Screen Size 991px
     }
 
     .list-product-title {
-        gap: 2px;
+        gap: 10px;
         padding-bottom: 20px;
     }
 
     .list-product-title li {
-        padding: 10px 10px;
-    }
-
-    .list-product-title li a {
-        font-size: 8px;
+        padding: 10px;
+        max-width: 90px;
     }
 
     .product-name {
@@ -3174,11 +3123,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .introduce {
-        padding: 20px;
-    }
-
-    .introduce-title h2 {
-        font-size: 16px;
+        padding: 20px 15px;
     }
 
     .introduce-title h3 {
@@ -3246,12 +3191,17 @@ RESPOONSIVE Screen Size 991px
     }
 
     .feedback-left-item-left p {
-        font-size: 8px;
-        line-height: 15px;
+        line-height: 25px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
     }
 
     .feedback-left-item {
-        bottom: -280px;
+        bottom: -300px;
         justify-content: space-between;
     }
 
@@ -3339,16 +3289,27 @@ RESPOONSIVE Screen Size 991px
     }
 
     .news-list-item-right p {
-        padding-top: 5px;
-        padding-right: 10px;
-        line-height: 16px;
+        line-height: 1;
         text-align: justify;
         color: rgb(114, 114, 114);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
     }
 
     .news-list-item-right h3 {
         font-size: 15px;
-        padding-bottom: 5px;
+        padding-bottom: 0;
+        margin-bottom: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
     }
 
     .news-active-title-left span {
@@ -3357,11 +3318,22 @@ RESPOONSIVE Screen Size 991px
 
     .news-active-content p {
         line-height: 15px;
-        font-size: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
     }
 
     .news-active-title-right p {
         line-height: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
     }
 
     .news-active-content {
@@ -3377,21 +3349,16 @@ RESPOONSIVE Screen Size 991px
         font-size: 24px;
     }
 
-    .news-title p,
-    .face-title p {
-        font-size: 8px;
-    }
-
-    .swiper-container-news {
+    /* .swiper-container-news {
         max-height: 525px;
-    }
+    } */
 
     .company-card {
         padding: 20px 0;
     }
 
     .slick-prev {
-        left: -17px !important;
+        left: -14px !important;
     }
 
     .slick-next {
@@ -3410,6 +3377,10 @@ RESPOONSIVE Screen Size 991px
 
     .footer-left h2 {
         font-size: 14px;
+    }
+
+    .footer-right {
+        padding-top: 20px;
     }
 
     .copyright-left {
@@ -3431,7 +3402,6 @@ RESPOONSIVE Screen Size 991px
 
     #scrollToTopBtn {
         right: 1%;
-        padding: 10px 15px 5px 15px;
     }
 
     #scrollToTopBtn svg {

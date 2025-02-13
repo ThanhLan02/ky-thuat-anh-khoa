@@ -139,18 +139,14 @@ $(document).ready(function () {
         slidesToShow: 6,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 7000,
+        variableWidth: false,
+        arrows: true,
         responsive: [
             {
                 breakpoint: 1200,
                 settings: {
-                    slidesToShow: 4,
-                }
-            },
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 4,
+                    slidesToShow: 5,
                 }
             },
             {
@@ -162,24 +158,26 @@ $(document).ready(function () {
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: 3,
                 }
             },
             {
                 breakpoint: 568,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                 }
             }
         ]
     });
-    $('.btn-company-left').click(function () {
+
+    // Use event delegation for custom navigation buttons
+    $(document).on('click', '.btn-company-left', function () {
         $('.company').slick('slickPrev');
     });
-    $('.btn-company-right').click(function () {
+
+    $(document).on('click', '.btn-company-right', function () {
         $('.company').slick('slickNext');
     });
-    // $('.feedback-left-item').slick();
 });
 
 //Menu mobile 
@@ -221,8 +219,9 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 3,
         spaceBetween: 10,
         loop: true,
+        autoHeight: true,
         autoplay: {
-            delay: 5000,
+            delay: 7000,
             disableOnInteraction: false,
         }, on: {
             slideChangeTransitionEnd: function () {
@@ -233,15 +232,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateNewsActive() {
         let activeSlide = document.querySelector(".news-list .swiper-slide-active");
         let newsActiveImg = document.querySelector(".news-active-img img");
-        let newsActiveTitle = document.querySelector(".news-active-title-right p");
         let newsActiveContent = document.querySelector(".news-active-content p");
         if (activeSlide) {
             let imgSrc = activeSlide.querySelector(".news-list-item-left img").src;
-            let title = activeSlide.querySelector(".news-list-item-right h3").innerText;
             let content = activeSlide.querySelector(".news-list-item-right p").innerText;
 
             newsActiveImg.src = imgSrc;
-            newsActiveTitle.innerText = title;
             newsActiveContent.innerText = content;
         }
     }
