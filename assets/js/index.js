@@ -229,17 +229,32 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         },
     });
+
     function updateNewsActive() {
         let activeSlide = document.querySelector(".news-list .swiper-slide-active");
         let newsActiveImg = document.querySelector(".news-active-img img");
-        let newsActiveContent = document.querySelector(".news-active-content p");
+        // let newsActiveContent = document.querySelector(".news-active-content p");
         if (activeSlide) {
             let imgSrc = activeSlide.querySelector(".news-list-item-left img").src;
-            let content = activeSlide.querySelector(".news-list-item-right p").innerText;
+            // let content = activeSlide.querySelector(".news-list-item-right p").innerText;
 
             newsActiveImg.src = imgSrc;
-            newsActiveContent.innerText = content;
+            // newsActiveContent.innerText = content;
         }
     }
     updateNewsActive();
+    var swiper = new Swiper(".swiper-container", {
+        loop: true,
+        autoplay: {
+            delay: 7000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".btn-feedback-left-next",
+            prevEl: ".btn-feedback-left-prev",
+        },
+        slidesPerView: 1,
+        effect: "slide",
+        spaceBetween: 0,
+    });
 });

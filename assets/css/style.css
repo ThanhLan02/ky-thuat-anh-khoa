@@ -103,6 +103,20 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'UTM HelvetIns';
+    src: url('../fonts/UTMHelvetIns.eot');
+    src: url('../fonts/UTMHelvetIns.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/UTMHelvetIns.woff2') format('woff2'),
+        url('../fonts/UTMHelvetIns.woff') format('woff'),
+        url('../fonts/UTMHelvetIns.ttf') format('truetype'),
+        url('../fonts/TMHelvetIns.svg#UTMHelvetIns') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 /*CSS Reset*/
 html,
 body,
@@ -526,6 +540,7 @@ body {
 .btn-submit-search {
     position: absolute;
     right: 20px;
+    top: 5px;
     border: 0;
     background-color: transparent;
 }
@@ -535,6 +550,8 @@ body {
     height: 30px;
     width: 100%;
     border: none;
+    padding-left: 10px;
+    padding-top: 5px;
 }
 
 .icon-search-moblie svg {
@@ -563,6 +580,7 @@ body {
     z-index: 101;
     height: 30px;
     animation: slideDownSearch 0.5s ease forwards;
+    padding-left: 10px;
 }
 
 .btn-search-moblie {
@@ -637,9 +655,7 @@ body {
 
 .slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+    height: auto;
 }
 
 .slide-caption {
@@ -654,10 +670,10 @@ body {
 .slide-caption h2 {
     font-family: 'UTM Impact';
     color: transparent;
-    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    -webkit-text-stroke: 1px rgb(168, 168, 170);
     font-size: 120px;
     font-weight: bold;
-    margin-bottom: 75px;
+    margin-bottom: 80px;
     letter-spacing: 10px;
 }
 
@@ -736,7 +752,7 @@ body {
 .reason-2,
 .reason-3,
 .reason-4 {
-    padding: 50px 20px;
+    padding: 65px 60px;
     text-align: center;
     border: 1px solid rgb(204, 204, 204);
 }
@@ -771,6 +787,10 @@ body {
 }
 
 /*Products*/
+.product {
+    overflow: hidden;
+}
+
 .product-content {
     padding: 10px;
 }
@@ -795,11 +815,11 @@ body {
     gap: 15px;
     align-items: center;
     justify-content: center;
-    padding: 15px 15px 30px 15px;
+    padding: 0 15px 30px 15px;
 }
 
 .list-product-title li {
-    padding: 20px 0;
+    padding: 16px 0;
     border: 1px solid rgb(204, 204, 204);
     max-width: 160px;
 }
@@ -854,7 +874,7 @@ body {
 }
 
 .product-content {
-    padding: 30px 10px;
+    padding: 20px 10px 30px 10px;
 }
 
 .product-name {
@@ -920,6 +940,7 @@ body {
 
 .paginate li a {
     text-decoration: none;
+    color: #000;
 }
 
 .paginate .active {
@@ -957,7 +978,7 @@ body {
 }
 
 .introduce-left-inner {
-    padding: 60px 40px;
+    padding: 50px 55px;
 }
 
 .introduce-right img {
@@ -1053,8 +1074,7 @@ body {
 
 /*typical-projects*/
 .typical-projects {
-    padding-top: 60px;
-    padding-bottom: 30px;
+    padding: 60px 0;
 }
 
 .typical-project-title {
@@ -1066,7 +1086,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .square img {
@@ -1297,7 +1317,7 @@ body {
 
 .feedback-left-item-right img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     position: relative;
 }
@@ -1323,6 +1343,12 @@ body {
     text-align: justify;
     line-height: 30px;
     font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
 }
 
 .feedback-left-item-info {
@@ -1407,7 +1433,7 @@ body {
 .feedback-right-form textarea {
     width: 100%;
     box-sizing: border-box;
-    height: 100px;
+    height: 160px;
     padding: 10px 10px 10px 20px;
     resize: none;
     border: 1px solid rgb(217, 217, 217);
@@ -1422,7 +1448,7 @@ body {
 .btn-submit-form {
     position: absolute;
     right: 1%;
-    bottom: 10%;
+    bottom: 5%;
     padding: 10px 30px;
     background-color: rgb(195, 41, 39);
     color: white;
@@ -1441,7 +1467,7 @@ body {
 }
 
 .news-n-face {
-    padding-top: 30px;
+    padding-top: 60px;
 }
 
 .news-n-face-inner {
@@ -1463,7 +1489,7 @@ body {
 
 .news-title p,
 .face-title p {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     font-family: 'Roboto Condensed';
     color: rgb(158, 158, 158);
 }
@@ -1474,13 +1500,17 @@ body {
 
 .news-active {
     padding-right: 5px;
+    flex: 0 0 47%;
+    max-width: 47%;
+}
+
+.news-active-img {
+    height: 200px;
 }
 
 .news-active-img img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
+    height: 100%;
 }
 
 .news-active-title {
@@ -1496,11 +1526,15 @@ body {
     background-color: rgb(0, 121, 214);
     margin-right: 10px;
     flex-direction: column;
-    padding: 5px;
+    padding: 5px 15px;
 }
 
 .news-active-title-left p {
-    font-size: 20px;
+    font-size: 25px;
+}
+
+.news-active-title-left p:nth-child(2) {
+    font-size: 10px;
 }
 
 .news-active-title-left span {
@@ -1525,6 +1559,12 @@ body {
 .news-active-content p {
     line-height: 25px;
     color: rgb(114, 114, 114);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
 }
 
 .btn-more-news {
@@ -1550,11 +1590,12 @@ body {
 
 .news-list {
     padding-left: 5px;
+    flex: 0 0 53%;
+    max-width: 53%;
 }
 
 .news-list-item {
     display: flex;
-    margin-bottom: 5px;
 }
 
 .news-list-item-left {
@@ -1576,7 +1617,7 @@ body {
 
 .news-list-item-right h3 {
     font-size: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .news-list-item-right span {
@@ -1593,7 +1634,7 @@ body {
 }
 
 .news-list-item-right p {
-    padding-top: 10px;
+    padding-top: 5px;
     line-height: 20px;
     text-align: justify;
     color: rgb(114, 114, 114);
@@ -1606,7 +1647,7 @@ body {
 /*company-card */
 
 .company-card {
-    padding: 30px 0;
+    padding: 60px 0;
     overflow: hidden;
 }
 
@@ -1708,11 +1749,12 @@ body {
 
 .footer-left h3 {
     font-family: 'Roboto-bold';
+    font-size: 15px;
 }
 
 .footer-left h2 {
-    font-family: 'Roboto-black';
-    font-size: 20px;
+    font-family: 'UTM HelvetIns';
+    font-size: 25px;
     padding-top: 20px;
 }
 
@@ -1737,11 +1779,10 @@ body {
 }
 
 .time-open h3 {
-    width: 100%;
     font-size: 15px;
     font-family: 'Roboto-bold';
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .time-open h3::after {
@@ -1749,7 +1790,7 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 20%;
+    width: 15%;
     border-bottom: 2px solid rgb(255, 255, 255);
 }
 
@@ -1776,7 +1817,7 @@ body {
     font-size: 15px;
     font-family: 'Roboto-bold';
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .support-policy h3::after {
@@ -1784,7 +1825,7 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 20%;
+    width: 15%;
     border-bottom: 2px solid rgb(255, 255, 255);
 }
 
@@ -1802,7 +1843,7 @@ body {
     font-size: 15px;
     font-family: 'Roboto-bold';
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .footer-right h3::after {
@@ -1816,7 +1857,7 @@ body {
 
 .map-wrapper {
     width: 100%;
-    height: 80%;
+    height: 240px;
     margin-top: 30px;
 }
 
@@ -1833,10 +1874,17 @@ body {
 
 .copyright-inner {
     color: white;
+    justify-content: center;
+}
+
+.copyright-left {
+    flex: 0 0 78%;
+    max-width: 78%;
 }
 
 .copyright-right {
-    justify-content: flex-end;
+    flex: 0 0 22%;
+    max-width: 22%;
 }
 
 .copyright-right-inner {
@@ -2115,14 +2163,14 @@ RESPOONSIVE Screen Size 991px
 
     /*Reason choose*/
     .reasons {
-        padding-bottom: 20px;
+        padding-bottom: 50px;
     }
 
     .reason-1,
     .reason-2,
     .reason-3,
     .reason-4 {
-        padding: 10px 0;
+        padding: 40px 30px;
     }
 
     .reason-1 img {
@@ -2150,11 +2198,11 @@ RESPOONSIVE Screen Size 991px
 
     .product-title h2 {
         font-size: 30px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 
     .product-title p {
-        padding-bottom: 10px;
+        padding-bottom: 30px;
     }
 
     .list-product-title {
@@ -2191,7 +2239,7 @@ RESPOONSIVE Screen Size 991px
 
     /*typical-projects*/
     .typical-projects {
-        padding-top: 20px;
+        padding-top: 50px;
         padding-bottom: 10px;
     }
 
@@ -2219,7 +2267,7 @@ RESPOONSIVE Screen Size 991px
 
     /*Feedback*/
     .feedback-inner {
-        padding: 30px 0;
+        padding: 40px 0;
         flex-direction: column;
     }
 
@@ -2263,6 +2311,10 @@ RESPOONSIVE Screen Size 991px
 
     }
 
+    .feedback-right-inner {
+        padding-top: 40px;
+    }
+
     .btn-control-feedback {
         bottom: 15%;
     }
@@ -2277,12 +2329,24 @@ RESPOONSIVE Screen Size 991px
         padding-bottom: 20px;
     }
 
+    .news-active,
+    .news-list {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
     .news-active {
-        padding-right: 5px;
+        padding-right: 15px;
+        padding-bottom: 30px;
+    }
+
+    .news-active-img {
+        height: 450px;
     }
 
     .news-list {
-        padding-left: 5px;
+        padding-left: 15px;
+        height: 700px;
     }
 
     .news-list-item {
@@ -2325,6 +2389,10 @@ RESPOONSIVE Screen Size 991px
         flex-direction: row;
     }
 
+    .footer-right {
+        padding-top: 20px;
+    }
+
     .copyright-inner {
         justify-content: center;
     }
@@ -2332,6 +2400,13 @@ RESPOONSIVE Screen Size 991px
     .copyright-left {
         text-align: center;
         padding-bottom: 10px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .copyright-right {
+        flex: 0 0 35%;
+        max-width: 35%;
     }
 
     .copyright-right-1 ::after {
@@ -2552,14 +2627,14 @@ RESPOONSIVE Screen Size 991px
 
     /*Reason choose*/
     .reasons {
-        padding-bottom: 20px;
+        padding-bottom: 40px;
     }
 
     .reason-1,
     .reason-2,
     .reason-3,
     .reason-4 {
-        padding: 10px 10px;
+        padding: 30px 10px;
     }
 
     .reason-1 img {
@@ -2595,11 +2670,11 @@ RESPOONSIVE Screen Size 991px
 
     .product-title h2 {
         font-size: 26px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 
     .product-title p {
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 
     .list-product {
@@ -2656,7 +2731,7 @@ RESPOONSIVE Screen Size 991px
 
     /*typical-projects*/
     .typical-projects {
-        padding-top: 20px;
+        padding-top: 40px;
         padding-bottom: 10px;
     }
 
@@ -2684,7 +2759,7 @@ RESPOONSIVE Screen Size 991px
 
     /*Feedback*/
     .feedback-inner {
-        padding: 30px 0;
+        padding: 40px 0;
     }
 
     .feedback-left-title h2 {
@@ -2702,6 +2777,12 @@ RESPOONSIVE Screen Size 991px
 
     .feedback-left-item-left p {
         line-height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
     }
 
     .feedback-left-item-left {
@@ -2736,7 +2817,7 @@ RESPOONSIVE Screen Size 991px
     /*News - Facebook*/
     .news-box-inner {
         justify-content: space-between;
-        padding-bottom: 20px;
+        padding-bottom: 40px;
     }
 
     .news-list-item-right p {
@@ -2744,6 +2825,12 @@ RESPOONSIVE Screen Size 991px
         line-height: 16px;
         text-align: justify;
         color: rgb(114, 114, 114);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
     }
 
     .news-list-item-right h3 {
@@ -2751,12 +2838,23 @@ RESPOONSIVE Screen Size 991px
         padding-bottom: 5px;
     }
 
+    .news-active,
+    .news-list {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
     .news-active {
-        padding-right: 5px;
+        padding-right: 15px;
+    }
+
+    .news-active-img {
+        height: 350px;
     }
 
     .news-list {
-        padding-left: 5px;
+        padding-left: 15px;
+        height: 600px;
     }
 
     .news-active-title-left span {
@@ -2772,7 +2870,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .news-active-content {
-        padding: 10px 0;
+        padding: 10px 0 20px 0;
     }
 
     .btn-more-news {
@@ -2790,9 +2888,7 @@ RESPOONSIVE Screen Size 991px
     } */
 
     .company-card {
-        padding: 20px 0;
-        justify-content: center;
-        align-items: center;
+        padding: 50px 0;
     }
 
     .slick-prev {
@@ -2808,9 +2904,20 @@ RESPOONSIVE Screen Size 991px
         padding-top: 0;
     }
 
+    .footer-right {
+        padding-top: 20px;
+    }
+
     .copyright-left {
         text-align: center;
         padding-bottom: 10px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .copyright-right {
+        flex: 0 0 45%;
+        max-width: 45%;
     }
 
     .copyright-right-1 ::after {
@@ -2996,6 +3103,7 @@ RESPOONSIVE Screen Size 991px
     .slide-caption h4 {
         font-size: 11px;
         margin-bottom: 15px;
+        letter-spacing: 15px;
     }
 
     .slide-caption h3 {
@@ -3029,14 +3137,14 @@ RESPOONSIVE Screen Size 991px
 
     /*Reason choose*/
     .reasons {
-        padding-bottom: 20px;
+        padding-bottom: 30px;
     }
 
     .reason-1,
     .reason-2,
     .reason-3,
     .reason-4 {
-        padding: 10px 10px;
+        padding: 30px 10px;
     }
 
     .reason-1 img {
@@ -3072,11 +3180,11 @@ RESPOONSIVE Screen Size 991px
 
     .product-title h2 {
         font-size: 24px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 
     .product-title p {
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 
     .list-product {
@@ -3105,8 +3213,19 @@ RESPOONSIVE Screen Size 991px
         font-size: 12px;
     }
 
+    .product-code,
+    .product-price {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
     .product-info {
         padding-top: 0;
+        flex-direction: column;
+    }
+
+    .product-code {
+        padding-bottom: 5px;
     }
 
     .paginate {
@@ -3146,7 +3265,7 @@ RESPOONSIVE Screen Size 991px
 
     /*typical-projects*/
     .typical-projects {
-        padding-top: 20px;
+        padding-top: 30px;
         padding-bottom: 10px;
     }
 
@@ -3183,7 +3302,7 @@ RESPOONSIVE Screen Size 991px
 
     /*Feedback*/
     .feedback-inner {
-        padding: 20px 0;
+        padding: 30px 0;
     }
 
     .feedback-left-title h2 {
@@ -3241,7 +3360,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .feedback-right-inner {
-        padding: 10px 10px;
+        padding: 30px 10px;
     }
 
     .feedback-right-title h2 {
@@ -3272,12 +3391,33 @@ RESPOONSIVE Screen Size 991px
         right: 1%;
     }
 
-    .news-box-inner {
-        padding-bottom: 20px;
+
+    /*News - face*/
+    .news-n-face {
+        padding-top: 30px;
+    }
+
+    .news-active,
+    .news-list {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
     .news-active {
-        padding-bottom: 20px;
+        padding-right: 15px;
+    }
+
+    .news-active-img {
+        height: 250px;
+    }
+
+    .news-list {
+        height: 400px;
+        padding-left: 15px;
+    }
+
+    .news-box-inner {
+        padding-bottom: 30px;
     }
 
     .news-list-item {
@@ -3289,7 +3429,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .news-list-item-right p {
-        line-height: 1;
+        line-height: 16px;
         text-align: justify;
         color: rgb(114, 114, 114);
         overflow: hidden;
@@ -3297,7 +3437,7 @@ RESPOONSIVE Screen Size 991px
         white-space: normal;
         -webkit-box-orient: vertical;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 5;
     }
 
     .news-list-item-right h3 {
@@ -3312,8 +3452,8 @@ RESPOONSIVE Screen Size 991px
         -webkit-line-clamp: 1;
     }
 
-    .news-active-title-left span {
-        font-size: 12px;
+    .news-active-title-left p {
+        font-size: 20px;
     }
 
     .news-active-content p {
@@ -3337,7 +3477,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .news-active-content {
-        padding: 10px 0;
+        padding: 10px 0 20px 0;
     }
 
     .btn-more-news {
@@ -3354,7 +3494,7 @@ RESPOONSIVE Screen Size 991px
     } */
 
     .company-card {
-        padding: 20px 0;
+        padding: 40px 0;
     }
 
     .slick-prev {
@@ -3367,7 +3507,7 @@ RESPOONSIVE Screen Size 991px
 
     /*Footer*/
     .footer {
-        padding-top: 15px;
+        padding-top: 30px;
     }
 
     .footer-inner {
@@ -3386,26 +3526,27 @@ RESPOONSIVE Screen Size 991px
     .copyright-left {
         text-align: center;
         padding-bottom: 10px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .copyright-right {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
     .copyright-right-1 ::after {
         right: 0;
     }
 
-    .copyright-right-1 {
+    .copyright-right-1,
+    .copyright-right-2 {
         text-align: center;
     }
 
-    .copyright-right-2 p {
-        text-align: center;
-    }
 
     #scrollToTopBtn {
-        right: 1%;
-    }
-
-    #scrollToTopBtn svg {
-        width: 15px;
-        height: 15px;
+        padding: 0;
+        right: 5px;
     }
 }
