@@ -30,79 +30,12 @@ btnLeft.addEventListener('click', function () {
 btnRight.addEventListener('click', function () {
     showNextSlide();
 });
-//--------Kéo thả sliders
-slides.addEventListener('dragstart', (e) => {
-    e.preventDefault();
-});
 function updateSlidePosition() {
     currentTranslate = -currentIndex * 100;
     slides.style.transform = `translateX(${currentTranslate}%)`;
     slides.style.transition = 'transform 0.3s ease-out';
 }
 
-slides.addEventListener('mousedown', (e) => {
-    e.preventDefault();
-    isDragging = true;
-    startX = e.clientX;
-    prevTranslate = currentTranslate;
-    slides.style.transition = 'none';
-});
-
-slides.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    const currentX = e.clientX;
-    const deltaX = currentX - startX;
-    currentTranslate = prevTranslate + (deltaX / slides.offsetWidth) * 100;
-    slides.style.transform = `translateX(${currentTranslate}%)`;
-});
-
-slides.addEventListener('mouseup', () => {
-    isDragging = false;
-    const threshold = 20;
-    const diff = currentTranslate - prevTranslate;
-    if (diff > threshold) {
-        showPrevSlide();
-    } else if (diff < -threshold) {
-        showNextSlide();
-    } else {
-        slides.style.transform = `translateX(${prevTranslate}%)`;
-    }
-});
-
-slides.addEventListener('mouseleave', () => {
-    if (isDragging) {
-        isDragging = false;
-        slides.style.transform = `translateX(${prevTranslate}%)`;
-    }
-});
-//---------Kéo thả cho mobile---------
-slides.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    startX = e.touches[0].clientX;
-    prevTranslate = currentTranslate;
-    slides.style.transition = 'none';
-});
-
-slides.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    const currentX = e.touches[0].clientX;
-    const deltaX = currentX - startX;
-    currentTranslate = prevTranslate + (deltaX / slides.offsetWidth) * 100;
-    slides.style.transform = `translateX(${currentTranslate}%)`;
-});
-
-slides.addEventListener('touchend', () => {
-    isDragging = false;
-    const threshold = 20;
-    const diff = currentTranslate - prevTranslate;
-    if (diff > threshold) {
-        showPrevSlide();
-    } else if (diff < -threshold) {
-        showNextSlide();
-    } else {
-        slides.style.transform = `translateX(${prevTranslate}%)`;
-    }
-});
 setInterval(showNextSlide, 5000);
 
 
