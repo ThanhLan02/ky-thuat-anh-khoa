@@ -243,6 +243,21 @@ body {
     justify-content: flex-end;
 }
 
+.header-top-right img:hover {
+    animation: spinIcon 1s linear infinite;
+}
+
+@keyframes spinIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
 .header-inner {
     padding: 10px 0;
     align-items: center;
@@ -260,7 +275,7 @@ body {
 .header-banner h2 {
     font-family: UTM Impact;
     font-size: 38px;
-    color: rgb(0, 121, 214);
+    color: rgb(0, 130, 229);
     margin-bottom: 20px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     -webkit-text-stroke: 1px white;
@@ -287,6 +302,37 @@ body {
 .header-contact-icon img {
     width: 45px;
     height: auto;
+    animation: shake 1s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(-20deg);
+    }
+
+    20% {
+        transform: rotate(20deg);
+    }
+
+    30% {
+        transform: rotate(-20deg);
+    }
+
+    40% {
+        transform: rotate(20deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .header-contact-info p {
@@ -368,7 +414,7 @@ body {
     top: 0;
     left: 0;
     width: 8%;
-    height: 50px;
+    height: 49px;
     background-image: url('../images/border-menu_03.png');
 }
 
@@ -378,7 +424,7 @@ body {
     top: 0;
     right: 0;
     width: 7%;
-    height: 50px;
+    height: 49px;
     background-image: url('../images/border-menu_05.png');
 }
 
@@ -453,6 +499,14 @@ body {
     display: none;
 }
 
+.menu-mobile.show-header-mobile {
+    transform: translateX(0);
+}
+
+.overlay-mobile.show-overlay-mobile {
+    display: block;
+}
+
 .menu-mobile-icon {
     display: none;
 }
@@ -522,7 +576,7 @@ body {
 .header-mobile-link li {
     display: block;
     margin: 0 auto;
-    padding: 5px 0;
+    padding: 8px 0;
 }
 
 .header-mobile-link li a {
@@ -570,25 +624,31 @@ body {
     z-index: 100;
 }
 
-.input-search-mobile {
+.form-search-mobile {
     position: absolute;
-    top: 2%;
+    top: 1%;
     left: 3%;
     width: 93%;
+    z-index: 101;
+    animation: slideDownSearch 0.5s ease forwards;
+}
+
+.input-search-mobile {
     border-radius: 25px;
     border: 1px solid #ccc;
-    z-index: 101;
     height: 30px;
-    animation: slideDownSearch 0.5s ease forwards;
+    width: 100%;
     padding-left: 10px;
 }
 
 .btn-search-moblie {
     position: absolute;
-    top: 2.5%;
-    right: 5%;
+    top: 15%;
+    right: 2%;
     cursor: pointer;
     z-index: 101;
+    border: none;
+    background-color: transparent;
 }
 
 .search-mobile-content {
@@ -611,7 +671,7 @@ body {
     }
 
     to {
-        top: 2%;
+        top: 1%;
     }
 }
 
@@ -644,8 +704,6 @@ body {
 
 .slider {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    cursor: grab;
 }
 
 .slider .slide {
@@ -670,9 +728,8 @@ body {
 .slide-caption h2 {
     font-family: 'UTM Impact';
     color: transparent;
-    -webkit-text-stroke: 1px rgb(168, 168, 170);
+    -webkit-text-stroke: 1.5px rgb(168, 168, 170);
     font-size: 120px;
-    font-weight: bold;
     margin-bottom: 80px;
     letter-spacing: 10px;
 }
@@ -762,7 +819,7 @@ body {
 .reason-3 h3,
 .reason-4 h3 {
     font-size: 16px;
-    margin: 20px 0;
+    padding: 20px 0;
 }
 
 .reason-1 p,
@@ -770,6 +827,7 @@ body {
 .reason-3 p,
 .reason-4 p {
     color: rgb(138, 138, 138);
+    line-height: 25px;
 }
 
 .reasons img:hover {
@@ -791,10 +849,6 @@ body {
     overflow: hidden;
 }
 
-.product-content {
-    padding: 10px;
-}
-
 .product-title {
     text-align: center;
 }
@@ -808,11 +862,12 @@ body {
 
 .product-title p {
     padding-bottom: 30px;
+    line-height: 20px;
 }
 
 .list-product-title {
     text-align: center;
-    gap: 15px;
+    gap: 10px;
     align-items: center;
     justify-content: center;
     padding: 0 15px 30px 15px;
@@ -821,7 +876,7 @@ body {
 .list-product-title li {
     padding: 16px 0;
     border: 1px solid rgb(204, 204, 204);
-    max-width: 160px;
+    max-width: 135px;
 }
 
 .list-product-title li:hover {
@@ -884,6 +939,7 @@ body {
 
 .product-name h3 {
     font-size: 16px;
+    line-height: 20px;
 }
 
 .product-info {
@@ -914,7 +970,7 @@ body {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     justify-content: center;
     padding-bottom: 60px;
@@ -981,10 +1037,21 @@ body {
     padding: 50px 55px;
 }
 
+.introduce-right-image {
+    overflow: hidden;
+}
+
 .introduce-right img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.3s ease-out;
+    transform: scale(1, 1);
+
+}
+
+.introduce-right-image:hover img {
+    transform: scale(1.1, 1.1);
 }
 
 .introduce-title {
@@ -1000,7 +1067,7 @@ body {
 
 .introduce-title p {
     color: rgb(195, 194, 194);
-    padding: 20px 0;
+    padding: 10px 0 20px 0;
 }
 
 .introduce-title h2 {
@@ -1048,8 +1115,8 @@ body {
 }
 
 .btn-introduce-more {
-    padding: 10px 20px;
-    width: 200px;
+    padding: 15px 20px;
+    width: 160px;
     border: 2px solid rgb(0, 121, 214);
     background-color: transparent;
     transition: all 0.3s ease;
@@ -1062,8 +1129,8 @@ body {
     bottom: 0;
     right: 0;
     transform: translate(-50%, -50%);
-    width: 3%;
-    height: 15%;
+    width: 4%;
+    height: 14%;
     background-image: url('../images/triangle-btn_03.png');
 }
 
@@ -1131,6 +1198,10 @@ body {
     display: block;
 }
 
+.typical-project-list-left-img:hover img {
+    transform: scale(1.1, 1.1);
+}
+
 .typical-project-list-left {
     padding-right: 7px;
 }
@@ -1142,11 +1213,11 @@ body {
 .typical-project-list-right-inner {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -5px;
+    margin: 0 -7px;
 }
 
 .project-list-right-item {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     padding: 0 7px;
 }
 
@@ -1179,7 +1250,7 @@ body {
     bottom: 0;
     left: 0;
     width: 80%;
-    background: linear-gradient(to right, rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0));
+    background: linear-gradient(to right, rgba(0, 123, 255, 1), rgba(0, 123, 255, 0));
     box-sizing: border-box;
     padding: 20px 0;
 }
@@ -1192,6 +1263,7 @@ body {
 .overlay-project-left-inner h3 {
     font-size: 20px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .overlay-project-left-inner p {
@@ -1229,7 +1301,7 @@ body {
 
 .feedback-left-icon::after {
     content: "";
-    flex: 0 0 90%;
+    flex: 0 0 96%;
     height: 1px;
     border-top: 1px dashed #999;
 }
@@ -1260,7 +1332,7 @@ body {
     position: absolute;
     top: 0;
     left: -100%;
-    width: 100%;
+    width: 101%;
     height: 100%;
     background-image: url('../images/feedback-overlay_02.png');
 }
@@ -1300,9 +1372,9 @@ body {
 }
 
 .feedback-left-item-left {
-    flex: 0 0 65%;
-    max-width: 65%;
-    margin-right: 20px;
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-right: 30px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -1408,8 +1480,9 @@ body {
     font-family: 'Muli regular';
     font-size: 15px;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0 20px 0;
     color: rgb(102, 102, 102);
+    line-height: 20px;
 }
 
 .feedback-right-form {
@@ -1449,7 +1522,7 @@ body {
     position: absolute;
     right: 1%;
     bottom: 5%;
-    padding: 10px 30px;
+    padding: 15px 35px;
     background-color: rgb(195, 41, 39);
     color: white;
     border: none;
@@ -1506,11 +1579,18 @@ body {
 
 .news-active-img {
     height: 200px;
+    overflow: hidden;
 }
 
 .news-active-img img {
     width: 100%;
     height: 100%;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+}
+
+.news-active-img:hover img {
+    transform: scale(1.1);
 }
 
 .news-active-title {
@@ -1535,10 +1615,6 @@ body {
 
 .news-active-title-left p:nth-child(2) {
     font-size: 10px;
-}
-
-.news-active-title-left span {
-    font-size: 12px;
 }
 
 .news-active-title-right {
@@ -1568,7 +1644,7 @@ body {
 }
 
 .btn-more-news {
-    padding: 10px 30px;
+    padding: 15px 30px;
     background-color: rgb(0, 121, 214);
     color: white;
     border: none;
@@ -1601,11 +1677,18 @@ body {
 .news-list-item-left {
     flex: 0 0 40%;
     max-width: 40%;
+    overflow: hidden;
 }
 
 .news-list-item-left img {
     width: 100%;
     height: 100%;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+}
+
+.news-list-item-left:hover img {
+    transform: scale(1.1);
 }
 
 .news-list-item-right {
@@ -1618,12 +1701,6 @@ body {
 .news-list-item-right h3 {
     font-size: 15px;
     padding-bottom: 5px;
-}
-
-.news-list-item-right span {
-    font-size: 12px;
-    color: rgb(176, 176, 176);
-
 }
 
 .news-list-item-right a {
@@ -1756,6 +1833,7 @@ body {
     font-family: 'UTM HelvetIns';
     font-size: 25px;
     padding-top: 20px;
+    line-height: 20px;
 }
 
 .footer-info li {
@@ -1772,10 +1850,25 @@ body {
     color: white;
     text-decoration: none;
     margin-left: 10px;
+    line-height: 16px;
 }
 
 .footer-info .footer-social img {
     padding: 0 10px;
+}
+
+.footer-social img:hover {
+    animation: rotate-social 1s linear infinite;
+}
+
+@keyframes rotate-social {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .time-open h3 {
@@ -1856,7 +1949,6 @@ body {
 }
 
 .map-wrapper {
-    width: 100%;
     height: 240px;
     margin-top: 30px;
 }
@@ -1880,6 +1972,10 @@ body {
 .copyright-left {
     flex: 0 0 78%;
     max-width: 78%;
+}
+
+.copyright-left p {
+    line-height: 20px;
 }
 
 .copyright-right {
@@ -1921,7 +2017,7 @@ body {
     padding: 5px;
     border-radius: 50%;
     transition: opacity 0.3s;
-    animation: pulse 1s infinite;
+    animation: go-top 1.5s linear infinite;
 }
 
 #scrollToTopBtn svg {
@@ -1930,17 +2026,17 @@ body {
     fill: white;
 }
 
-@keyframes pulse {
+@keyframes go-top {
     0% {
-        transform: scale(1);
+        transform: translateY(0);
     }
 
     50% {
-        transform: scale(1.2);
+        transform: translateY(-10px);
     }
 
     100% {
-        transform: scale(1);
+        transform: translateY(0px);
     }
 }
 
@@ -2075,12 +2171,6 @@ RESPOONSIVE Screen Size 991px
         display: none;
     }
 
-    .mobile-dropdown {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-    }
-
     .mobile-dropdown-menu {
         display: none;
         position: relative;
@@ -2183,14 +2273,6 @@ RESPOONSIVE Screen Size 991px
         width: 50px;
     }
 
-    .reason-1 p,
-    .reason-2 p,
-    .reason-3 p,
-    .reason-4 p {
-        padding: 0 20px;
-        font-size: 13px;
-    }
-
     /*Products*/
     .product-content {
         padding: 20px 10px;
@@ -2224,13 +2306,13 @@ RESPOONSIVE Screen Size 991px
 
     /*introduce*/
     .introduce-right-image {
-        flex: 0 0 94%;
-        max-width: 94%;
+        flex: 0 0 92%;
+        max-width: 92%;
     }
 
     .introduce-right-text {
-        flex: 0 0 6%;
-        max-width: 6%;
+        flex: 0 0 8%;
+        max-width: 8%;
     }
 
     .introduce {
@@ -2363,20 +2445,12 @@ RESPOONSIVE Screen Size 991px
         align-items: center;
     }
 
-    .company {
-        justify-content: center;
-    }
-
     .slick-prev {
-        left: -17px !important;
-        width: 20px;
-        height: 20px;
+        display: none !important;
     }
 
     .slick-next {
-        right: -17px !important;
-        width: 20px;
-        height: 20px;
+        display: none !important;
     }
 
     /*Footer*/
@@ -2426,18 +2500,6 @@ RESPOONSIVE Screen Size 991px
     .header-top,
     .header-center {
         display: none;
-    }
-
-    .header-top-slogan {
-        margin-right: 20px;
-    }
-
-    .header-banner h2 {
-        font-size: 22px;
-    }
-
-    .header-banner p {
-        font-size: 12px;
     }
 
     .header-top-right img {
@@ -2536,16 +2598,10 @@ RESPOONSIVE Screen Size 991px
         display: none;
     }
 
-    .mobile-dropdown {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-    }
-
     .mobile-dropdown-menu {
         display: none;
         position: relative;
-        padding: 10px 0;
+        padding-top: 10px;
         z-index: 1;
         min-width: 200px;
         left: 15%;
@@ -2619,6 +2675,7 @@ RESPOONSIVE Screen Size 991px
 
     .hotline>p {
         font-size: 14px;
+        padding: 5px 15px 20px 15px;
     }
 
     .hotline p a {
@@ -2634,7 +2691,7 @@ RESPOONSIVE Screen Size 991px
     .reason-2,
     .reason-3,
     .reason-4 {
-        padding: 30px 10px;
+        padding: 30px 20px;
     }
 
     .reason-1 img {
@@ -2652,20 +2709,11 @@ RESPOONSIVE Screen Size 991px
     .reason-3 h3,
     .reason-4 h3 {
         font-size: 13px;
-        margin: 10px 0;
-    }
-
-    .reason-1 p,
-    .reason-2 p,
-    .reason-3 p,
-    .reason-4 p {
-        padding: 0 5px;
-        font-size: 12px;
     }
 
     /*Products*/
     .product-content {
-        padding: 10px;
+        padding: 15px 10px;
     }
 
     .product-title h2 {
@@ -2698,10 +2746,6 @@ RESPOONSIVE Screen Size 991px
         padding: 10px 0;
     }
 
-    .product-name h3 {
-        font-size: 14px;
-    }
-
     .product-info {
         padding: 10px 0;
     }
@@ -2722,11 +2766,6 @@ RESPOONSIVE Screen Size 991px
 
     .introduce-right-text p {
         font-size: 22px;
-    }
-
-    .btn-introduce-more {
-        padding: 5px 10px;
-        width: 150px;
     }
 
     /*typical-projects*/
@@ -2822,7 +2861,7 @@ RESPOONSIVE Screen Size 991px
 
     .news-list-item-right p {
         padding-top: 5px;
-        line-height: 16px;
+        line-height: 18px;
         text-align: justify;
         color: rgb(114, 114, 114);
         overflow: hidden;
@@ -2857,12 +2896,8 @@ RESPOONSIVE Screen Size 991px
         height: 600px;
     }
 
-    .news-active-title-left span {
-        font-size: 12px;
-    }
-
     .news-active-content p {
-        line-height: 15px;
+        line-height: 18px;
     }
 
     .news-active-title-right p {
@@ -2892,11 +2927,11 @@ RESPOONSIVE Screen Size 991px
     }
 
     .slick-prev {
-        left: -17px !important;
+        display: none;
     }
 
     .slick-next {
-        right: -17px !important;
+        display: none;
     }
 
     /*Footer*/
@@ -3051,16 +3086,10 @@ RESPOONSIVE Screen Size 991px
         display: none;
     }
 
-    .mobile-dropdown {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-    }
-
     .mobile-dropdown-menu {
         display: none;
         position: relative;
-        padding: 10px 0;
+        padding-top: 10px;
         z-index: 1;
         min-width: 200px;
         left: 15%;
@@ -3096,7 +3125,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .slide-caption h2 {
-        font-size: 28px;
+        font-size: 30px;
         margin-bottom: 20px;
     }
 
@@ -3108,14 +3137,13 @@ RESPOONSIVE Screen Size 991px
 
     .slide-caption h3 {
         font-size: 16px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .slide-caption p {
         padding-bottom: 5px;
         margin-top: 0;
         line-height: 1;
-        font-size: 10px;
     }
 
     .slide-caption button {
@@ -3127,12 +3155,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .hotline>p {
-        font-size: 8px;
-        padding: 5px;
-    }
-
-    .hotline p a {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     /*Reason choose*/
@@ -3144,7 +3167,7 @@ RESPOONSIVE Screen Size 991px
     .reason-2,
     .reason-3,
     .reason-4 {
-        padding: 30px 10px;
+        padding: 30px 20px;
     }
 
     .reason-1 img {
@@ -3152,9 +3175,12 @@ RESPOONSIVE Screen Size 991px
     }
 
     .reason-2 img,
-    .reason-3 img,
-    .reason-4 img {
+    .reason-3 img {
         width: 30px;
+    }
+
+    .reason-4 img {
+        width: 40px;
     }
 
     .reason-1 h3,
@@ -3162,20 +3188,11 @@ RESPOONSIVE Screen Size 991px
     .reason-3 h3,
     .reason-4 h3 {
         font-size: 13px;
-        margin: 10px 0;
-    }
-
-    .reason-1 p,
-    .reason-2 p,
-    .reason-3 p,
-    .reason-4 p {
-        padding: 0 5px;
-        font-size: 9px;
     }
 
     /*Products*/
     .product-content {
-        padding: 10px;
+        padding: 15px 10px;
     }
 
     .product-title h2 {
@@ -3209,10 +3226,6 @@ RESPOONSIVE Screen Size 991px
         padding: 10px 0;
     }
 
-    .product-name h3 {
-        font-size: 12px;
-    }
-
     .product-code,
     .product-price {
         flex: 0 0 100%;
@@ -3225,15 +3238,11 @@ RESPOONSIVE Screen Size 991px
     }
 
     .product-code {
-        padding-bottom: 5px;
+        padding-bottom: 10px;
     }
 
     .paginate {
-        gap: 5px;
-    }
-
-    .product-paginate li {
-        padding: 5px 10px;
+        gap: 10px;
     }
 
     /*introduce*/
@@ -3243,19 +3252,6 @@ RESPOONSIVE Screen Size 991px
 
     .introduce {
         padding: 20px 15px;
-    }
-
-    .introduce-title h3 {
-        font-size: 13px;
-    }
-
-    .introduce-info p {
-        line-height: 23px;
-    }
-
-    .btn-introduce-more {
-        padding: 5px 10px;
-        width: 150px;
     }
 
     .introduce-right-text p {
@@ -3292,12 +3288,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .overlay-project-left-inner h3 {
-        font-size: 12px;
-    }
-
-    .overlay-project-left-inner p {
-        line-height: 15px;
-        font-size: 9px;
+        font-size: 16px;
     }
 
     /*Feedback*/
@@ -3317,6 +3308,10 @@ RESPOONSIVE Screen Size 991px
         -webkit-box-orient: vertical;
         display: -webkit-box;
         -webkit-line-clamp: 4;
+    }
+
+    .feedback-left-item-info {
+        margin-top: 10px;
     }
 
     .feedback-left-item {
@@ -3367,20 +3362,8 @@ RESPOONSIVE Screen Size 991px
         font-size: 20px;
     }
 
-    .feedback-right-inner p {
-        font-size: 11px;
-    }
-
-    .feedback-right-form input {
-        font-size: 11px;
-    }
-
     .feedback-right-form img {
         right: 1%;
-    }
-
-    .feedback-right-form textarea {
-        font-size: 11px;
     }
 
     .btn-submit-form {
@@ -3429,7 +3412,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .news-list-item-right p {
-        line-height: 16px;
+        line-height: 18px;
         text-align: justify;
         color: rgb(114, 114, 114);
         overflow: hidden;
@@ -3452,12 +3435,8 @@ RESPOONSIVE Screen Size 991px
         -webkit-line-clamp: 1;
     }
 
-    .news-active-title-left p {
-        font-size: 20px;
-    }
-
     .news-active-content p {
-        line-height: 15px;
+        line-height: 18px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: normal;
@@ -3480,10 +3459,6 @@ RESPOONSIVE Screen Size 991px
         padding: 10px 0 20px 0;
     }
 
-    .btn-more-news {
-        padding: 5px 10px;
-    }
-
     .news-title h2,
     .face-title h2 {
         font-size: 24px;
@@ -3498,11 +3473,11 @@ RESPOONSIVE Screen Size 991px
     }
 
     .slick-prev {
-        left: -14px !important;
+        display: none;
     }
 
     .slick-next {
-        right: -17px !important;
+        display: none;
     }
 
     /*Footer*/
@@ -3516,7 +3491,7 @@ RESPOONSIVE Screen Size 991px
     }
 
     .footer-left h2 {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .footer-right {

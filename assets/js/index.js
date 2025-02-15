@@ -1,6 +1,5 @@
 const slides = document.querySelector('.slider');
 const slideCount = document.querySelectorAll('.slide').length;
-console.log(slideCount);
 const btnLeft = document.querySelector('.btn-slide-left');
 const btnRight = document.querySelector('.btn-slide-right');
 let currentIndex = 0;
@@ -180,40 +179,47 @@ $(document).ready(function () {
     });
 });
 
-//Menu mobile 
 document.addEventListener('DOMContentLoaded', function () {
+    const headerMobile = document.querySelector('.menu-mobile-icon');
+    const menuMobile = document.querySelector('.menu-mobile');
+    const overlayMobile = document.querySelector('.overlay-mobile');
+    const cross = document.querySelector('.cross');
     const dropdownToggle = document.querySelector('.mobile-dropdown-toggle');
     const dropdownMenu = document.querySelector('.mobile-dropdown-menu');
+    const dropdownSubToggle = document.querySelector('.mobile-dropdown-sub-toggle');
+    const dropdownSubMenu = document.querySelector('.mobile-dropdown-sub-menu');
+    // Show menu monile
+    headerMobile.addEventListener('click', function (event) {
+        event.preventDefault();
+        menuMobile.classList.toggle('show-header-mobile');
+        overlayMobile.classList.toggle('show-overlay-mobile');
+    });
+    // Hide menu mobile
+    overlayMobile.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (menuMobile.classList.contains('show-header-mobile') && overlayMobile.classList.contains('show-overlay-mobile')) {
+            menuMobile.classList.remove('show-header-mobile');
+            overlayMobile.classList.remove('show-overlay-mobile');
+        }
+    });
+    cross.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (menuMobile.classList.contains('show-header-mobile') && overlayMobile.classList.contains('show-overlay-mobile')) {
+            menuMobile.classList.remove('show-header-mobile');
+            overlayMobile.classList.remove('show-overlay-mobile');
+        }
+    });
+    //show sub menu mobile
     dropdownToggle.addEventListener('click', function (event) {
         event.preventDefault();
         dropdownMenu.classList.toggle('show');
     });
-});
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdownToggle = document.querySelector('.mobile-dropdown-sub-toggle');
-    const dropdownMenu = document.querySelector('.mobile-dropdown-sub-menu');
-    dropdownToggle.addEventListener('click', function (event) {
-        event.preventDefault();
-        dropdownMenu.classList.toggle('show-sub');
-    });
-});
 
-document.querySelector('.icon-search-moblie').addEventListener('click', function () {
-    const searchBar = document.querySelector('.search-mobile-content');
-    if (searchBar.classList.contains('show')) {
-        searchBar.classList.remove('show');
-    } else {
-        searchBar.classList.add('show');
-    }
-});
-document.querySelector('.overlay-search-mobile').addEventListener('click', function () {
-    const searchBar = document.querySelector('.search-mobile-content');
-    if (searchBar.classList.contains('show')) {
-        searchBar.classList.remove('show');
-    }
-});
-// slide news feed 
-document.addEventListener("DOMContentLoaded", function () {
+    dropdownSubToggle.addEventListener('click', function (event) {
+        event.preventDefault();
+        dropdownSubMenu.classList.toggle('show-sub');
+    });
+    //slide news feed
     var swiper2 = new Swiper(".swiper-container-news", {
         direction: "vertical",
         slidesPerView: 3,
@@ -242,6 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // newsActiveContent.innerText = content;
         }
     }
+    //slide feedback
     updateNewsActive();
     var swiper = new Swiper(".swiper-container", {
         loop: true,
@@ -257,4 +264,19 @@ document.addEventListener("DOMContentLoaded", function () {
         effect: "slide",
         spaceBetween: 0,
     });
+});
+//Search mobile
+document.querySelector('.icon-search-moblie').addEventListener('click', function () {
+    const searchBar = document.querySelector('.search-mobile-content');
+    if (searchBar.classList.contains('show')) {
+        searchBar.classList.remove('show');
+    } else {
+        searchBar.classList.add('show');
+    }
+});
+document.querySelector('.overlay-search-mobile').addEventListener('click', function () {
+    const searchBar = document.querySelector('.search-mobile-content');
+    if (searchBar.classList.contains('show')) {
+        searchBar.classList.remove('show');
+    }
 });
